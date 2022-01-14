@@ -1,0 +1,124 @@
+[1mdiff --git a/config.go b/config.go[m
+[1mindex b55e83c..7dae239 100644[m
+[1m--- a/config.go[m
+[1m+++ b/config.go[m
+[36m@@ -265,6 +265,9 @@[m [mfunc loadSwitch() {[m
+ 				filter{team.Self, "img/default/self/points/point_8_alt.png", 8},[m
+ 			},[m
+ 		},[m
+[32m+[m		[32m"balls": {[m[41m[m
+[32m+[m			[32mteam.Balls.Name: {},[m[41m[m
+[32m+[m		[32m},[m[41m[m
+ 		"time": {[m
+ 			team.Time.Name: {[m
+ 				filter{team.Time, "img/default/time/points/point_0.png", 0},[m
+[36m@@ -305,6 +308,9 @@[m [mfunc loadSwitch() {[m
+ 			team.Purple.Name: {},[m
+ 			team.Self.Name:   {},[m
+ 		},[m
+[32m+[m		[32m"balls": {[m[41m[m
+[32m+[m			[32mteam.Balls.Name: {},[m[41m[m
+[32m+[m		[32m},[m[41m[m
+ 		"time": {[m
+ 			team.Time.Name: {},[m
+ 		},[m
+[36m@@ -327,6 +333,43 @@[m [mfunc loadIOS() {[m
+ 			team.Orange.Name: {},[m
+ 			team.Self.Name:   {},[m
+ 		},[m
+[32m+[m		[32m"balls": {[m[41m[m
+[32m+[m			[32mteam.Balls.Name: {[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_0.png", 0},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_0_alt.png", 0},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_0_alt_alt.png", 0},[m[41m[m
+[32m+[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_1.png", 1},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_1_alt.png", 1},[m[41m[m
+[32m+[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_2.png", 2},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_2_alt.png", 2},[m[41m[m
+[32m+[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_3.png", 3},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_3_alt.png", 3},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_3_alt_alt.png", 3},[m[41m[m
+[32m+[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_4.png", 4},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_4_alt.png", 4},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_4_alt_alt.png", 4},[m[41m[m
+[32m+[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_5.png", 5},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_5_alt.png", 5},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_5_alt_alt.png", 5},[m[41m[m
+[32m+[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_6.png", 6},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_6_alt.png", 6},[m[41m[m
+[32m+[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_7.png", 7},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_7_alt.png", 7},[m[41m[m
+[32m+[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_8.png", 8},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_8_alt.png", 8},[m[41m[m
+[32m+[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_9.png", 9},[m[41m[m
+[32m+[m				[32mfilter{team.Balls, "img/custom/balls/score_9_alt.png", 9},[m[41m[m
+[32m+[m			[32m},[m[41m[m
+[32m+[m		[32m},[m[41m[m
+ 		"time": {[m
+ 			team.Time.Name: {[m
+ 				filter{team.Time, "img/custom/time/points/point_0.png", 0},[m
+[36m@@ -376,6 +419,9 @@[m [mfunc loadIOS() {[m
+ 			team.Purple.Name: {},[m
+ 			team.Self.Name:   {},[m
+ 		},[m
+[32m+[m		[32m"balls": {[m[41m[m
+[32m+[m			[32mteam.Balls.Name: {},[m[41m[m
+[32m+[m		[32m},[m[41m[m
+ 		"time": {[m
+ 			team.Time.Name: {},[m
+ 		},[m
+[1mdiff --git a/main.go b/main.go[m
+[1mindex 291e3a7..83e1541 100644[m
+[1m--- a/main.go[m
+[1m+++ b/main.go[m
+[36m@@ -165,6 +165,7 @@[m [mfunc seconds() {[m
+ [m
+ 		if m.time(matrix, img, screen.regularTime) == 0 && m.time(matrix, img, screen.finalStretch) == 0 {[m
+ 			// Let's back off and not waste processing power.[m
+[32m+[m			[32mlog.Info().Msg("Cannot find time, pausing for 5s")[m[41m[m
+ 			time.Sleep(time.Second * 5)[m
+ 		}[m
+ [m
+[1mdiff --git a/match.go b/match.go[m
+[1mindex b9cbb54..55f7ac1 100644[m
+[1m--- a/match.go[m
+[1m+++ b/match.go[m
+[36m@@ -25,6 +25,8 @@[m [mfunc (m match) process(matrix gocv.Mat, img *image.RGBA) {[m
+ 	switch m.category {[m
+ 	case "scored":[m
+ 		m.points(matrix.Region(m.Team.Rectangle(m.Point)), img)[m
+[32m+[m	[32mcase "balls":[m[41m[m
+[32m+[m		[32mm.points(matrix.Region(m.Team.Rectangle(m.Point)), img)[m[41m[m
+ 	case "game":[m
+ 		switch m.subcategory {[m
+ 		case "vs":[m
+[36m@@ -48,9 +50,9 @@[m [mfunc (m match) process(matrix gocv.Mat, img *image.RGBA) {[m
+ }[m
+ [m
+ func (m match) points(matrix2 gocv.Mat, img *image.RGBA) {[m
+[31m-	results := make([]gocv.Mat, len(templates["points"][m.Team.Name]))[m
+[32m+[m	[32mresults := make([]gocv.Mat, len(templates["balls"][m.Team.Name]))[m[41m[m
+ [m
+[31m-	for i, pt := range templates["points"][m.Team.Name] {[m
+[32m+[m	[32mfor i, pt := range templates["balls"][m.Team.Name] {[m[41m[m
+ 		mat := gocv.NewMat()[m
+ 		defer mat.Close()[m
+ [m
+[36m@@ -72,7 +74,7 @@[m [mfunc (m match) points(matrix2 gocv.Mat, img *image.RGBA) {[m
+ 			pieces = append(pieces,[m
+ 				piece{[m
+ 					maxp,[m
+[31m-					templates["points"][m.Team.Name][i].filter,[m
+[32m+[m					[32mtemplates["balls"][m.Team.Name][i].filter,[m[41m[m
+ 				},[m
+ 			)[m
+ 		}[m

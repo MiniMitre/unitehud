@@ -165,6 +165,7 @@ func seconds() {
 
 		if m.time(matrix, img, screen.regularTime) == 0 && m.time(matrix, img, screen.finalStretch) == 0 {
 			// Let's back off and not waste processing power.
+			log.Info().Msg("Cannot find time, pausing for 5s")
 			time.Sleep(time.Second * 5)
 		}
 

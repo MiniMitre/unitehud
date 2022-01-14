@@ -20,7 +20,10 @@ type match struct {
 }
 
 func (m match) process(matrix gocv.Mat, img *image.RGBA) {
-	log.Info().Object("match", m).Int("cols", matrix.Cols()).Int("rows", matrix.Rows()).Msg("match found")
+
+	if m.category != "balls" {
+		log.Info().Object("match", m).Int("cols", matrix.Cols()).Int("rows", matrix.Rows()).Msg("match found")
+	}
 
 	switch m.category {
 	case "scored":

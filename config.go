@@ -37,7 +37,7 @@ var (
 
 	configs = map[string]config{
 		"default": {
-			scores: image.Rect(640, 0, 1400, 500),
+			scores: image.Rect(1050, 75, 1360, 140),
 			time:   image.Rect(875, 0, 1025, 60),
 			regularTime: [4]image.Rectangle{
 				image.Rect(35, 15, 60, 50),
@@ -265,6 +265,9 @@ func loadSwitch() {
 				filter{team.Self, "img/default/self/points/point_8_alt.png", 8},
 			},
 		},
+		"balls": {
+			team.Balls.Name: {},
+		},
 		"time": {
 			team.Time.Name: {
 				filter{team.Time, "img/default/time/points/point_0.png", 0},
@@ -305,6 +308,9 @@ func loadSwitch() {
 			team.Purple.Name: {},
 			team.Self.Name:   {},
 		},
+		"balls": {
+			team.Balls.Name: {},
+		},
 		"time": {
 			team.Time.Name: {},
 		},
@@ -318,14 +324,111 @@ func loadIOS() {
 			"end": {},
 		},
 		"scored": {
-			team.Purple.Name: {},
-			team.Orange.Name: {},
-			team.Self.Name:   {},
+			team.Purple.Name: {
+				filter{team.Purple, "img/custom/purple/score/score.png", -0},
+				filter{team.Purple, "img/custom/purple/score/score_alt.png", -0},
+			},
+			team.Orange.Name: {
+				filter{team.Orange, "img/custom/orange/score/score.png", -0},
+				filter{team.Orange, "img/custom/orange/score/score_alt.png", -0},
+			},
+			team.Self.Name: {},
 		},
 		"points": {
-			team.Purple.Name: {},
-			team.Orange.Name: {},
-			team.Self.Name:   {},
+			team.Purple.Name: {
+				filter{team.Purple, "img/custom/purple/points/point_0.png", 0},
+				filter{team.Purple, "img/custom/purple/points/point_0_alt.png", 0},
+				filter{team.Purple, "img/custom/purple/points/point_0_alt_alt.png", 0},
+
+				filter{team.Purple, "img/custom/purple/points/point_1.png", 1},
+				filter{team.Purple, "img/custom/purple/points/point_1_alt.png", 1},
+
+				filter{team.Purple, "img/custom/purple/points/point_2.png", 2},
+				filter{team.Purple, "img/custom/purple/points/point_2_alt.png", 2},
+
+				filter{team.Purple, "img/custom/purple/points/point_3.png", 3},
+
+				filter{team.Purple, "img/custom/purple/points/point_4.png", 4},
+
+				filter{team.Purple, "img/custom/purple/points/point_5.png", 5},
+				filter{team.Purple, "img/custom/purple/points/point_5_alt.png", 5},
+
+				filter{team.Purple, "img/custom/purple/points/point_6.png", 6},
+				filter{team.Purple, "img/custom/purple/points/point_6_alt.png", 6},
+
+				filter{team.Purple, "img/custom/purple/points/point_7.png", 7},
+
+				filter{team.Purple, "img/custom/purple/points/point_8.png", 8},
+
+				filter{team.Purple, "img/custom/purple/points/point_9.png", 9},
+				filter{team.Purple, "img/custom/purple/points/point_9_alt.png", 9},
+			},
+			team.Orange.Name: {
+				filter{team.Orange, "img/custom/orange/points/point_0.png", 0},
+				filter{team.Orange, "img/custom/orange/points/point_0_alt.png", 0},
+				filter{team.Orange, "img/custom/orange/points/point_0_alt_alt.png", 0},
+
+				filter{team.Orange, "img/custom/orange/points/point_1.png", 1},
+				filter{team.Orange, "img/custom/orange/points/point_1_alt.png", 1},
+
+				filter{team.Orange, "img/custom/orange/points/point_2.png", 2},
+
+				filter{team.Orange, "img/custom/orange/points/point_3.png", 3},
+
+				filter{team.Orange, "img/custom/orange/points/point_4.png", 4},
+				filter{team.Orange, "img/custom/orange/points/point_4_alt.png", 4},
+
+				filter{team.Orange, "img/custom/orange/points/point_5.png", 5},
+
+				filter{team.Orange, "img/custom/orange/points/point_6.png", 6},
+				filter{team.Orange, "img/custom/orange/points/point_6_alt.png", 6},
+
+				filter{team.Orange, "img/custom/orange/points/point_7.png", 7},
+				filter{team.Orange, "img/custom/orange/points/point_7_alt.png", 7},
+
+				filter{team.Orange, "img/custom/orange/points/point_8.png", 8},
+				filter{team.Orange, "img/custom/orange/points/point_8_alt.png", 8},
+
+				filter{team.Orange, "img/custom/orange/points/point_9.png", 9},
+			},
+			team.Self.Name: {},
+		},
+		"balls": {
+			team.Balls.Name: {
+				filter{team.Balls, "img/custom/balls/score_0.png", 0},
+				filter{team.Balls, "img/custom/balls/score_0_alt.png", 0},
+				filter{team.Balls, "img/custom/balls/score_0_alt_alt.png", 0},
+
+				filter{team.Balls, "img/custom/balls/score_1.png", 1},
+				filter{team.Balls, "img/custom/balls/score_1_alt.png", 1},
+
+				filter{team.Balls, "img/custom/balls/score_2.png", 2},
+				filter{team.Balls, "img/custom/balls/score_2_alt.png", 2},
+
+				filter{team.Balls, "img/custom/balls/score_3.png", 3},
+				filter{team.Balls, "img/custom/balls/score_3_alt.png", 3},
+				filter{team.Balls, "img/custom/balls/score_3_alt_alt.png", 3},
+
+				filter{team.Balls, "img/custom/balls/score_4.png", 4},
+				filter{team.Balls, "img/custom/balls/score_4_alt.png", 4},
+				filter{team.Balls, "img/custom/balls/score_4_alt_alt.png", 4},
+
+				filter{team.Balls, "img/custom/balls/score_5.png", 5},
+				filter{team.Balls, "img/custom/balls/score_5_alt.png", 5},
+				filter{team.Balls, "img/custom/balls/score_5_alt_alt.png", 5},
+
+				filter{team.Balls, "img/custom/balls/score_6.png", 6},
+				filter{team.Balls, "img/custom/balls/score_6_alt.png", 6},
+
+				filter{team.Balls, "img/custom/balls/score_7.png", 7},
+				filter{team.Balls, "img/custom/balls/score_7_alt.png", 7},
+
+				filter{team.Balls, "img/custom/balls/score_8.png", 8},
+				filter{team.Balls, "img/custom/balls/score_8_alt.png", 8},
+
+				filter{team.Balls, "img/custom/balls/score_9.png", 9},
+				filter{team.Balls, "img/custom/balls/score_9_alt.png", 9},
+			},
 		},
 		"time": {
 			team.Time.Name: {
@@ -375,6 +478,9 @@ func loadIOS() {
 			team.Orange.Name: {},
 			team.Purple.Name: {},
 			team.Self.Name:   {},
+		},
+		"balls": {
+			team.Balls.Name: {},
 		},
 		"time": {
 			team.Time.Name: {},
